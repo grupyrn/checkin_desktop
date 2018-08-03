@@ -25,7 +25,10 @@ class CameraFrame(Frame):
     def __init__(self, master, check):
         Frame.__init__(self, master)
 
-        text = Label(self, text=_(u'Place the QR-Code on the camera'))
+        self._bg = 'white'
+        self.configure(bg=self._bg)
+
+        text = Label(self, text=_(u'Place the QR-Code on the camera'), bg=self._bg)
         text.config(font=("Courier", 25))
         text.pack(ipady=20, expand=1, fill=Y)
 

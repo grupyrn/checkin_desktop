@@ -23,6 +23,8 @@ class CheckinFrame(Frame):
     def __init__(self, master, data, check):
         Frame.__init__(self, master)
 
+        _bg = 'white'
+
         url = self._url.format(md5(data.get('email')).hexdigest())
         imagefile = cStringIO.StringIO(urllib.urlopen(url).read())
         img = ImageTk.PhotoImage(Image.open(imagefile))
@@ -35,7 +37,7 @@ class CheckinFrame(Frame):
             greeting = _(u'Thank you, {}!')
 
         first_name = data.get('name').split()[0]
-        text = Label(self, text=greeting.format(first_name))
+        text = Label(self, text=greeting.format(first_name), bg=_bg)
         text.config(font=("Courier", 40))
 
         panel.pack(expand=1, fill=Y, pady=(80, 40))

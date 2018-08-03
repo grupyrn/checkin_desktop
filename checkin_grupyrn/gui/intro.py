@@ -20,18 +20,19 @@ from checkin_grupyrn import config
 class IntroFrame(Frame):
 
     def __init__(self, master):
-        Frame.__init__(self, master)
+        bg = 'white'
+        Frame.__init__(self, master, bg=bg)
 
-        right_panel = Frame(self)
+        right_panel = Frame(self, bg=bg)
 
-        path = '../assets/logo.png'  # always use slash
+        path = '../assets/logo_flat.png'  # always use slash
         filepath = pkg_resources.resource_filename(__name__, path)
 
         img = ImageTk.PhotoImage(Image.open(filepath), format='png')
-        logo = Label(self, image=img)
+        logo = Label(self, image=img, bg=bg)
         logo.image = img
 
-        title = Label(right_panel, text=config.get('title'))
+        title = Label(right_panel, text=config.get('title'), bg=bg)
         title.config(font=("Courier", 40))
 
         button_checkin = Button(right_panel, text=_(u'Check-in'), fg='green', bg='#aaaaaa',

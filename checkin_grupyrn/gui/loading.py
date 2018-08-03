@@ -19,7 +19,9 @@ class LoadingFrame(Frame):
     def __init__(self, master, func, *args, **kwargs):
         Frame.__init__(self, master)
 
-        text = Label(self, text=kwargs.get('text', _('Loading...')))
+        _bg = 'white'
+
+        text = Label(self, text=kwargs.get('text', _('Loading...')), bg=_bg)
         text.config(font=("Courier", 40))
 
         text.pack(ipady=500)

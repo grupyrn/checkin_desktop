@@ -1,6 +1,6 @@
 import os
 
-from checkin_grupyrn.gui import GruPyRNCheckin
+from checkin_grupyrn.app import GruPyRNCheckin
 
 if __name__ == '__main__':
     app = GruPyRNCheckin()

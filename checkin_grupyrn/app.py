@@ -17,19 +17,17 @@ class GruPyRNCheckin(Tk):
 
     def __init__(self, *args, **kwargs):
         Tk.__init__(self, *args, **kwargs)
-
         self.title(config.get('window_title'))
+        self.configure(background='white')
         # This just maximizes it so we can see the window. It's nothing to do with fullscreen.
         # self.tk.attributes('-zoomed', True)
-        path = '../assets/icon.png'  # always use slash
+        path = 'assets/icon.png'  # always use slash
         filepath = pkg_resources.resource_filename(__name__, path)
-
         imgicon = PhotoImage(file=abspath(filepath))
         self.call('wm', 'iconphoto', self._w, imgicon)
 
         self.geometry('800x480')
-        #
-        # self.frame.pack(anchor=CENTER)
+
         self._frame = None
         self.replace_frame(intro.IntroFrame)
 
