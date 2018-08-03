@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2018-07-30 10:22+-03\n"
-"PO-Revision-Date: 2018-07-30 10:26-0300\n"
+"PO-Revision-Date: 2018-07-30 14:36-0300\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,11 +35,15 @@ msgstr "Obrigado, {}!"
 
 #: checkin_grupyrn/gui/intro.py:38
 msgid "Check-in"
-msgstr "Realizar Check-in"
+msgstr ""
+"Realizar\n"
+"Check-in"
 
 #: checkin_grupyrn/gui/intro.py:41
 msgid "Check-out"
-msgstr "Realizar Check-out"
+msgstr ""
+"Realizar\n"
+"Check-out"
 
 #: checkin_grupyrn/gui/loading.py:23
 msgid "Loading..."

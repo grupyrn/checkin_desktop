@@ -8,6 +8,6 @@ filepath = pkg_resources.resource_filename(__name__, path)
 
 localedir = os.path.abspath(filepath)
 
-pt = gettext.translation('messages', localedir=localedir, languages=['pt'], fallback=True)
-pt.install()
+lang = gettext.translation('messages', localedir=localedir, languages=['pt'], fallback=True)
+lang.install()
 # _ = lambda s: s
