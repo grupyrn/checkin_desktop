@@ -23,6 +23,8 @@ class IntroFrame(Frame):
         bg = 'white'
         Frame.__init__(self, master, bg=bg)
 
+        event = master.get('event')
+
         right_panel = Frame(self, bg=bg)
 
         path = '../assets/logo_flat.png'  # always use slash
@@ -32,13 +34,13 @@ class IntroFrame(Frame):
         logo = Label(self, image=img, bg=bg)
         logo.image = img
 
-        title = Label(right_panel, text=config.get('title'), bg=bg)
+        title = Label(right_panel, wraplength=250, text=event.get('name'), bg=bg)
         title.config(font=("Courier", 40))
 
-        button_checkin = Button(right_panel, text=_(u'Check-in'), fg='green', bg='#aaaaaa',
+        button_checkin = Button(right_panel, text=_(u'Check-in'), wraplength=250, fg='green', bg='#aaaaaa',
                                 command=lambda: master.replace_frame(checkin_grupyrn.gui.CameraFrame, True),
                                 font=("Courier", 24), height=3, width=20)
-        button_checkout = Button(right_panel, text=_(u'Check-out'), fg='red', bg='#aaaaaa',
+        button_checkout = Button(right_panel, text=_(u'Check-out'), wraplength=250, fg='red', bg='#aaaaaa',
                                  command=lambda: master.replace_frame(checkin_grupyrn.gui.CameraFrame, False),
                                  font=("Courier", 24), height=3, width=20)
 

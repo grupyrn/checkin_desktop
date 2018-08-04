@@ -12,6 +12,6 @@ def current_events():
 
 
 def event_check(member_data, event, check):
-    data = {'member': member_data, 'check': check, 'event': event}
-    response = requests.post('{}/{}'.format(_base_url, 'check'), json=data, headers={'Authorization': 'Token ' + _key})
+    data = {'member': member_data, 'check': check, 'event': event['id']}
+    response = requests.post('{}/{}'.format(_base_url, 'check/'), json=data, headers={'Authorization': 'Token ' + _key})
     return response.ok, response.json()

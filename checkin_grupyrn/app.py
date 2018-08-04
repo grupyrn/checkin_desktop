@@ -3,7 +3,7 @@ from os.path import abspath
 
 import pkg_resources
 
-from checkin_grupyrn.gui import intro
+from checkin_grupyrn.gui import intro, initial
 from checkin_grupyrn import config
 from checkin_grupyrn.i18n import *
 
@@ -17,6 +17,9 @@ class GruPyRNCheckin(Tk):
 
     def __init__(self, *args, **kwargs):
         Tk.__init__(self, *args, **kwargs)
+
+        self.session = {}
+
         self.title(config.get('window_title'))
         self.configure(background='white')
         # This just maximizes it so we can see the window. It's nothing to do with fullscreen.
@@ -29,7 +32,7 @@ class GruPyRNCheckin(Tk):
         self.geometry('800x480')
 
         self._frame = None
-        self.replace_frame(intro.IntroFrame)
+        self.replace_frame(initial.InitialFrame)
 
         self.fullscreen_state = False
         self.bind("<F11>", self.toggle_fullscreen)
@@ -53,3 +56,9 @@ class GruPyRNCheckin(Tk):
             self._frame.destroy()
         self._frame = new_frame
         self._frame.pack()
+
+    def get(self, key):
+        return self.session.get(key, None)
+
+    def put(self, **data):
+        self.session.update(data)

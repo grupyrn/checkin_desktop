@@ -5,46 +5,66 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2018-07-30 10:22+-03\n"
-"PO-Revision-Date: 2018-07-30 14:36-0300\n"
+"POT-Creation-Date: 2018-08-03 23:17+-03\n"
+"PO-Revision-Date: 2018-08-03 23:27-0300\n"
+"Last-Translator: \n"
 "Language-Team: \n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: pygettext.py 1.5\n"
 "X-Generator: Poedit 2.1.1\n"
-"Last-Translator: \n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"Language: pt_BR\n"
 
-#: checkin_grupyrn/gui/camera.py:30
+#: checkin_grupyrn/gui/camera.py:31
 msgid "Place the QR-Code on the camera"
 msgstr "Alinhe o QR-Code na câmera"
 
-#: checkin_grupyrn/gui/camera.py:44
+#: checkin_grupyrn/gui/camera.py:45
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: checkin_grupyrn/gui/checkin.py:34
+#: checkin_grupyrn/gui/checkin.py:31 checkin_grupyrn/gui/loading.py:24
+msgid "Loading..."
+msgstr "Aguarde…"
+
+#: checkin_grupyrn/gui/checkin.py:61
 msgid "Welcome, {}!"
 msgstr "Bem-vindo, {}!"
 
-#: checkin_grupyrn/gui/checkin.py:36
+#: checkin_grupyrn/gui/checkin.py:63
 msgid "Thank you, {}!"
 msgstr "Obrigado, {}!"
 
-#: checkin_grupyrn/gui/intro.py:38
+#: checkin_grupyrn/gui/initial.py:28
+msgid "Synchronizing..."
+msgstr "Sincronizando…"
+
+#: checkin_grupyrn/gui/initial.py:41
+msgid "There is no event active."
+msgstr "Não há evento ativo."
+
+#: checkin_grupyrn/gui/intro.py:40
 msgid "Check-in"
 msgstr ""
 "Realizar\n"
 "Check-in"
 
-#: checkin_grupyrn/gui/intro.py:41
+#: checkin_grupyrn/gui/intro.py:43
 msgid "Check-out"
 msgstr ""
 "Realizar\n"
 "Check-out"
 
-#: checkin_grupyrn/gui/loading.py:23
-msgid "Loading..."
-msgstr "Aguarde…"
+msgid "Member did not checkin."
+msgstr "Você não realizou check-in."
+
+msgid "Member already checked-out."
+msgstr "Você já realizou check-out."
+
+msgid "Member already checked-in."
+msgstr "Você já realizou check-in."
+
+msgid "Event inactive."
+msgstr "Não há evento ativo."

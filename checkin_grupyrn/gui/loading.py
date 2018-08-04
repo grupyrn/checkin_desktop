@@ -29,4 +29,4 @@ class LoadingFrame(Frame):
         result = func(*args)
         redirect = kwargs.get('redirect', checkin_grupyrn.gui.IntroFrame)
 
-        Timer(3.0, lambda: master.replace_frame(redirect)).start()
+        Timer(2.0, lambda: master.replace_frame(redirect)).start()

@@ -1,5 +1,7 @@
 {
-  "title": "3º Meetup\nGruPy-RN",
   "window_title": "Check-in GruPy-RN",
   "crypto_key": "key",
+  "api_url": "https://my/api",
+  "api_key": "key",
+  "fallback_avatar": "https://my.site/default_avatar.png"
 }
