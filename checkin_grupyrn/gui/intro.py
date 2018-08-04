@@ -34,7 +34,7 @@ class IntroFrame(Frame):
         logo = Label(self, image=img, bg=bg)
         logo.image = img
 
-        title = Label(right_panel, wraplength=250, text=event.get('name'), bg=bg)
+        title = Label(right_panel, wraplength=450, text=event.get('name'), bg=bg)
         title.config(font=("Courier", 40))
 
         button_checkin = Button(right_panel, text=_(u'Check-in'), wraplength=250, fg='green', bg='#aaaaaa',

@@ -23,12 +23,12 @@ class CheckinFrame(Frame):
     _bg = 'white'
 
     def __init__(self, master, data, check):
-        Frame.__init__(self, master)
+        Frame.__init__(self, master, bg=self._bg)
 
         self.data = data
         self.check = check
 
-        self.text = Label(self, text=_('Loading...'), bg=self._bg)
+        self.text = Label(self, text=_('Loading...'), wraplength=350, bg=self._bg)
         self.show_text(font=("Courier", 40))
 
         self.load()
@@ -54,7 +54,7 @@ class CheckinFrame(Frame):
         url = self._url.format(md5(self.data.get('email')).hexdigest(), urllib.quote(config.get('fallback_avatar')))
         imagefile = cStringIO.StringIO(urllib.urlopen(url).read())
         img = ImageTk.PhotoImage(Image.open(imagefile))
-        panel = Label(self, image=img)
+        panel = Label(self, image=img, bg=self._bg)
         panel.image = img
 
         if self.check:
