@@ -63,7 +63,7 @@ class CheckinFrame(Frame):
             greeting = _(u'Thank you, {}!')
 
         first_name = self.data.get('name').split()[0]
-        text = Label(self, text=greeting.format(first_name), bg=self._bg)
+        text = Label(self, text=unicode(greeting).format(first_name), bg=self._bg)
         text.config(font=("Courier", 40))
 
         panel.pack(expand=1, fill=Y, pady=(80, 40))
