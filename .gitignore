@@ -227,7 +227,7 @@ venv.bak/
 
 ### Python Patch ###
 .venv/
-checkin_grupyrn/config.json
+checkin_grupyrn/config*.json
 scripts/
 
 
