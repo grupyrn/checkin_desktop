@@ -31,7 +31,7 @@ msgstr "Aguarde…"
 
 #: checkin_grupyrn/gui/checkin.py:61
 msgid "Welcome, {}!"
-msgstr "Bem-vindo, {}!"
+msgstr "Aproveite, {}!"
 
 #: checkin_grupyrn/gui/checkin.py:63
 msgid "Thank you, {}!"
