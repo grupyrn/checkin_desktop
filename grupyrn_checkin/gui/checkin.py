@@ -2,12 +2,12 @@
 import sys
 from threading import Timer
 
-import checkin_grupyrn.gui
+import grupyrn_checkin.gui
 import urllib, cStringIO
 from hashlib import md5
 
-import checkin_grupyrn.gui
-from checkin_grupyrn import config, api
+import grupyrn_checkin.gui
+from grupyrn_checkin import config, api
 
 if sys.version_info[0] == 2:  # Just checking your Python version to import Tkinter properly.
     from Tkinter import *
@@ -48,7 +48,7 @@ class CheckinFrame(Frame):
             self.show_info()
         else:
             self.show_text(text=_(response['message']), fg='red')
-            Timer(3.0, lambda: self.master.replace_frame(checkin_grupyrn.gui.IntroFrame)).start()
+            Timer(3.0, lambda: self.master.replace_frame(grupyrn_checkin.gui.IntroFrame)).start()
 
     def show_info(self):
         url = self._url.format(md5(self.data.get('email')).hexdigest(), urllib.quote(config.get('fallback_avatar')))
@@ -69,4 +69,4 @@ class CheckinFrame(Frame):
         panel.pack(expand=1, fill=Y, pady=(80, 40))
         text.pack(pady=(0, 40))
 
-        Timer(2.0, lambda: self.master.replace_frame(checkin_grupyrn.gui.IntroFrame)).start()
+        Timer(2.0, lambda: self.master.replace_frame(grupyrn_checkin.gui.IntroFrame)).start()

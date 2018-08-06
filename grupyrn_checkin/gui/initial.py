@@ -5,7 +5,7 @@ from threading import Timer
 
 import pkg_resources
 
-import checkin_grupyrn.gui
+import grupyrn_checkin.gui
 
 if sys.version_info[0] == 2:  # Just checking your Python version to import Tkinter properly.
     from Tkinter import *
@@ -13,7 +13,7 @@ else:
     from tkinter import *
 
 from PIL import ImageTk, Image
-from checkin_grupyrn import config, api
+from grupyrn_checkin import config, api
 
 
 # __name__ in case you're within the package
@@ -43,5 +43,5 @@ class InitialFrame(Frame):
             else:
                 self.master.put(event=data[0])
                 Timer(0.5, lambda: self.master.replace_frame(
-                    checkin_grupyrn.gui.IntroFrame
+                    grupyrn_checkin.gui.IntroFrame
                 )).start()

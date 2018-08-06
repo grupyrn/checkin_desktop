@@ -3,7 +3,7 @@ import sys
 
 import pkg_resources
 
-import checkin_grupyrn.gui
+import grupyrn_checkin.gui
 
 if sys.version_info[0] == 2:  # Just checking your Python version to import Tkinter properly.
     from Tkinter import *
@@ -11,7 +11,7 @@ else:
     from tkinter import *
 
 from PIL import ImageTk, Image
-from checkin_grupyrn import config
+from grupyrn_checkin import config
 
 
 # __name__ in case you're within the package
@@ -38,10 +38,10 @@ class IntroFrame(Frame):
         title.config(font=("Courier", 40))
 
         button_checkin = Button(right_panel, text=_(u'Check-in'), wraplength=250, fg='green', bg='#aaaaaa',
-                                command=lambda: master.replace_frame(checkin_grupyrn.gui.CameraFrame, True),
+                                command=lambda: master.replace_frame(grupyrn_checkin.gui.CameraFrame, True),
                                 font=("Courier", 24), height=3, width=20)
         button_checkout = Button(right_panel, text=_(u'Check-out'), wraplength=250, fg='red', bg='#aaaaaa',
-                                 command=lambda: master.replace_frame(checkin_grupyrn.gui.CameraFrame, False),
+                                 command=lambda: master.replace_frame(grupyrn_checkin.gui.CameraFrame, False),
                                  font=("Courier", 24), height=3, width=20)
 
         logo.pack(padx=(40, 0), side=LEFT, expand=1, fill=Y, ipady=100)
