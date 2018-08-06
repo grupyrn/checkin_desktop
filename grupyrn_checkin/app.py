@@ -3,9 +3,9 @@ from os.path import abspath
 
 import pkg_resources
 
-from checkin_grupyrn.gui import intro, initial
-from checkin_grupyrn import config
-from checkin_grupyrn.i18n import *
+from grupyrn_checkin.gui import intro, initial
+from grupyrn_checkin import config
+from grupyrn_checkin.i18n import *
 
 if sys.version_info[0] == 2:  # Just checking your Python version to import Tkinter properly.
     from Tkinter import *

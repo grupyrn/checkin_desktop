@@ -9,8 +9,8 @@ import imutils
 from imutils.video import VideoStream
 from pyzbar import pyzbar
 
-import checkin_grupyrn.gui
-from checkin_grupyrn.decoder import decode_qrcode
+import grupyrn_checkin.gui
+from grupyrn_checkin.decoder import decode_qrcode
 
 if sys.version_info[0] == 2:  # Just checking your Python version to import Tkinter properly.
     from Tkinter import *
@@ -43,7 +43,7 @@ class CameraFrame(Frame):
         self.thread.start()
 
         cancel_button = Button(self, text=_(u'Cancel'), fg='red',
-                               command=lambda: master.replace_frame(checkin_grupyrn.gui.IntroFrame),
+                               command=lambda: master.replace_frame(grupyrn_checkin.gui.IntroFrame),
                                font=("Courier", 24),
                                height=1, width=20)
         cancel_button.pack(pady=(0, 20), side=BOTTOM)
@@ -102,7 +102,7 @@ class CameraFrame(Frame):
 
                 if self.found:
                     self.stopEvent.set()
-                    self.master.replace_frame(checkin_grupyrn.gui.CheckinFrame, self.found, self.check)
+                    self.master.replace_frame(grupyrn_checkin.gui.CheckinFrame, self.found, self.check)
         except TclError:
             print("[INFO] caught a TclError")
 

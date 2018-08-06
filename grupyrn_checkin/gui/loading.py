@@ -1,11 +1,11 @@
 # coding=utf-8
 import sys
 from threading import Timer
-import checkin_grupyrn.gui
+import grupyrn_checkin.gui
 import urllib, cStringIO
 from hashlib import md5
 
-import checkin_grupyrn.gui
+import grupyrn_checkin.gui
 
 if sys.version_info[0] == 2:  # Just checking your Python version to import Tkinter properly.
     from Tkinter import *
@@ -27,6 +27,6 @@ class LoadingFrame(Frame):
         text.pack(ipady=500)
 
         result = func(*args)
-        redirect = kwargs.get('redirect', checkin_grupyrn.gui.IntroFrame)
+        redirect = kwargs.get('redirect', grupyrn_checkin.gui.IntroFrame)
 
         Timer(2.0, lambda: master.replace_frame(redirect)).start()

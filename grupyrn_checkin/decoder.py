@@ -1,6 +1,6 @@
 import json
 from cryptography.fernet import Fernet
-from checkin_grupyrn import config
+from grupyrn_checkin import config
 
 
 def decode_qrcode(qr_data):
