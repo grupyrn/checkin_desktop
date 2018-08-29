@@ -74,7 +74,7 @@ class CameraFrame(Frame):
 
                     if barcode_type == 'QRCODE':
                         if not self.found:
-                            self.found = decode_qrcode(barcode_data)
+                            self.found = barcode_data
                             break
 
                     # draw the barcode data and barcode type on the image
