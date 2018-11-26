@@ -9,7 +9,7 @@ opencv-python = "*"
 imutils = "*"
 pyzbar = "*"
 cryptography = "*"
-requests = "*"
+requests = ">=2.20.0"
 
 [dev-packages]
 pyinstaller = "*"
