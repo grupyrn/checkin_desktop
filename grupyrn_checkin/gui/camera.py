@@ -10,7 +10,6 @@ from imutils.video import VideoStream
 from pyzbar import pyzbar
 
 import grupyrn_checkin.gui
-from grupyrn_checkin.decoder import decode_qrcode
 
 if sys.version_info[0] == 2:  # Just checking your Python version to import Tkinter properly.
     from Tkinter import *
@@ -22,11 +21,16 @@ from PIL import Image, ImageTk
 
 class CameraFrame(Frame):
 
-    def __init__(self, master, check):
+    def __init__(self, master, check, **kwargs):
         Frame.__init__(self, master)
 
         self._bg = 'white'
         self.configure(bg=self._bg)
+
+        if 'subevents' in kwargs.keys():
+            self.subevents = True
+        else:
+            self.subevents = False
 
         text = Label(self, text=_(u'Place the QR-Code on the camera'), bg=self._bg)
         text.config(font=("Courier", 25))
@@ -102,7 +106,8 @@ class CameraFrame(Frame):
 
                 if self.found:
                     self.stopEvent.set()
-                    self.master.replace_frame(grupyrn_checkin.gui.CheckinFrame, self.found, self.check)
+                    self.master.replace_frame(grupyrn_checkin.gui.CheckinFrame, self.found, self.check,
+                                              subevents=self.subevents)
         except TclError:
             print("[INFO] caught a TclError")
 

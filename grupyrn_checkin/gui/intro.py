@@ -11,7 +11,6 @@ else:
     from tkinter import *
 
 from PIL import ImageTk, Image
-from grupyrn_checkin import config
 
 
 # __name__ in case you're within the package
@@ -43,10 +42,15 @@ class IntroFrame(Frame):
         button_checkout = Button(right_panel, text=_(u'Check-out'), wraplength=250, fg='red', bg='#aaaaaa',
                                  command=lambda: master.replace_frame(grupyrn_checkin.gui.CameraFrame, False),
                                  font=("Courier", 24), height=3, width=20)
+        button_checkout_subevents = Button(right_panel, text=_(u'Check-out'), wraplength=250, fg='red', bg='#aaaaaa',
+                                           command=lambda: master.replace_frame(grupyrn_checkin.gui.CameraFrame, False,
+                                                                                subevents=True),
+                                           font=("Courier", 24), height=3, width=20)
 
-        logo.pack(padx=(40, 0), side=LEFT, expand=1, fill=Y, ipady=100)
+        logo.pack(padx=(40, 0), side=LEFT, expand=1, fill=Y, ipady=140)
 
         title.pack(pady=(0, 40))
         button_checkin.pack()
         button_checkout.pack()
-        right_panel.pack(padx=(100, 40), side=RIGHT)
+        # button_checkout_subevents.pack()
+        right_panel.pack(padx=(70, 40), side=RIGHT)

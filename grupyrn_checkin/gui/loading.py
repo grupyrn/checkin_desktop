@@ -2,7 +2,10 @@
 import sys
 from threading import Timer
 import grupyrn_checkin.gui
-import urllib, cStringIO
+if sys.version_info[0] == 2:  # Just checking your Python version to import Tkinter properly.
+    from cStringIO import StringIO
+else:
+    from io import StringIO
 from hashlib import md5
 
 import grupyrn_checkin.gui

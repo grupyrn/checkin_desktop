@@ -39,9 +39,13 @@ class InitialFrame(Frame):
         if ok:
             if not data:
                 Timer(0.5, lambda: self.show_error(_('There is no event active.'))).start()
-
             else:
-                self.master.put(event=data[0])
+                try:
+                    index = int(sys.argv[1])
+                except:
+                    index = 0
+
+                self.master.put(event=data[index])
                 Timer(0.5, lambda: self.master.replace_frame(
                     grupyrn_checkin.gui.IntroFrame
                 )).start()
