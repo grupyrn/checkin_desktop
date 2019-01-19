@@ -36,7 +36,6 @@ class CameraFrame(Frame):
         text.config(font=("Courier", 25))
         text.pack(ipady=20, expand=1, fill=Y)
 
-        self.vs = VideoStream(usePiCamera=os.uname()[4][:3] == 'arm').start()
         self.check = check
         self.panel = None
         self.videoframe = None
@@ -113,5 +112,9 @@ class CameraFrame(Frame):
 
     def destroy(self):
         self.stopEvent.set()
-        self.vs.stop()
+        # self.vs.stop()
         Frame.destroy(self)
+
+    @property
+    def vs(self):
+        return self.master.vs
